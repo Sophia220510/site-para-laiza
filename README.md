@@ -1,48 +1,32 @@
-# Laiza Carvalho Nutrition
+# Laiza Carvalho — Nutrição clínica e esportiva
 
-faça um site para essa nutricionista, site profissional 100% bom, foque em deixar muito muito bonito o site, vou te mandar tudo as informaçoes
+Site em português, responsivo e renderizado no servidor com React, TanStack Start e Vite. Fotos reais, navegação por âncoras, WhatsApp, FAQ acessível e animações progressivas que respeitam a preferência por movimento reduzido.
 
-https://www.instagram.com/nutrilaizacarvalho/
+## Desenvolvimento
 
-Nutricionista Esportiva- American College 🇺🇸 Atendimento Clínico e Esportivo ( GOIÂNIA e JARAGUÁ- GO) Atendimentos presenciais ou on-line ( presente em mais de 7 Países )
-
-nutrilaizacarvalho
-
-Laiza Carvalho Nutricionista Goiânia
-
-1.327 posts
-
-19,5 mil seguidores
-
-7.624 seguindo
-
-CRN 9396
-👩‍⚕️ A Nutri que não complica
-🌱 Saúde intestinal | Emagrecimento sustentável | saúde da mulher |Nutrição esportiva e performance 🏃‍♀️
-
-bio.site/laizacarvalho
-
-
-
-use fotos reais do insta e fotos dela no site
-
-This project was built with [Lovable](https://lovable.dev).
-
-## Build with Lovable
-
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/1205ee89-aff6-4f65-aea7-01e43af7120f).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
+Node.js 24 e npm.
 
 ```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+npm ci
 npm run dev
 ```
+
+## Verificação e build
+
+```sh
+npm run test
+npx tsc --noEmit
+npm run build
+```
+
+## Vercel
+
+Importe este repositório com diretório raiz `.`. O arquivo `vercel.json` define `npm ci` e `npm run build`; o preset Nitro `vercel` produz `.vercel/output` com os arquivos estáticos e a função de renderização. Use o runtime Node.js 24. Se houver um Output Directory manual no painel da Vercel, remova-o para utilizar a Build Output API; não configure `dist`.
+
+## Conteúdo e imagens
+
+Telefone, Instagram, e-mail, CRN e áreas de atendimento vieram do projeto fornecido. Confirme os dados profissionais com Laiza antes da divulgação. Nenhum depoimento, endereço específico ou garantia de resultado foi acrescentado.
+
+A foto real foi recuperada da página pública `https://bio.site/laizacarvalho` e otimizada em `public/images/laiza-consultorio.webp`. Os dois arquivos `src/assets/*.asset.json` preservam a referência da mídia e a URL de origem, mas utilizam a cópia local para evitar os caminhos privados `/__l5e/` do Lovable. A mesma fotografia é apresentada com enquadramentos diferentes no início e na seção sobre a profissional.
+
+Animações: entrada inicial em CSS, revelação progressiva com IntersectionObserver, interações dos cartões e indicação de leitura. O conteúdo permanece visível quando JavaScript está desativado e com movimento reduzido. Consultas presenciais e on-line abrem mensagens específicas no WhatsApp.

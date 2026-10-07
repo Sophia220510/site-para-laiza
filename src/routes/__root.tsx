@@ -77,8 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
   head: () => ({
     meta: [
       { charSet: "utf-8" },
-      { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { name: "theme-color", content: "#1f3a2c" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Laiza Carvalho | Nutricionista" },
       { name: "description", content: "Nutrição clínica e esportiva com Laiza Carvalho. Atendimento presencial em Goiânia e Jaraguá e on-line." },
       { name: "author", content: "Laiza Carvalho" },
@@ -88,6 +87,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { name: "twitter:card", content: "summary_large_image" },
     ],
     links: [
+      { rel: "preload", href: "/images/laiza-consultorio.webp", as: "image" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;600;700&family=Instrument+Serif:ital@0;1&display=swap" },
@@ -95,10 +95,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: appCss,
       },
-      { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
+      { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
     ],
   }),
-  scripts: [{ children: "document.documentElement.classList.add('anim')" }],
   shellComponent: RootShell,
   component: RootComponent,
   notFoundComponent: NotFoundComponent,
